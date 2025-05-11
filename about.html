@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>О компании – AEROSYSTEMS</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <style>
+        /* Additional formatting for the About page */
+        .about-intro,
+        .about-details {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 800px;
+            background-color: var(--background-color);
+            border: 1px solid var(--accent-color);
+            border-radius: 8px;
+        }
+
+        .about-intro h1,
+        .about-details h2 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .about-intro p,
+        .about-details p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-align: justify;
+            margin: 0 20px 20px;
+        }
+
+        /* Uniform size for all images in the gallery */
+        .gallery img {
+            width: 300px;
+            /* Fixed width */
+            height: 200px;
+            /* Fixed height */
+            object-fit: cover;
+            /* Ensures image covers the box */
+            margin: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="static/photos/logo-transparent-png.png" alt="Логотип AEROSYSTEMS">
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Главная</a></li>
+                    <li><a href="about.html">О компании</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="products.php">Продукция</a></li>
+                    <li><a href="add_product.php">Добавить</a></li>
+                    <li><a href="products_table.php">Таблица</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content about-page">
+        <section class="about-intro">
+            <h1>О компании AEROSYSTEMS</h1>
+            <p>AEROSYSTEMS – ведущий производитель высокотехнологичных аэрокосмических систем, предлагающий решения для
+                оборонного и гражданского секторов.</p>
+        </section>
+        <section class="about-details">
+            <h2>Наша история</h2>
+            <p>С момента основания мы зарекомендовали себя как инновационная компания, постоянно совершенствующая
+                технологии и
+                расширяющая границы возможного в аэрокосмической отрасли.</p>
+        </section>
+        <section class="product-gallery">
+            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">Наша продукция</h2>
+            <div class="gallery" style="display: flex; flex-wrap: wrap; justify-content: center;">
+                <img src="static/photos/poland_f-35_reveal.webp" alt="F-35">
+                <img src="static/photos/raptor.jpg" alt="F-22 Raptor">
+                <img src="static/photos/rafale.jpg" alt="Rafale">
+                <img src="static/photos/f15.jpg" alt="F-15">
+                <img src="static/photos/nasams.jpeg" alt="NASAMS">
+                <img src="static/photos/m142.jpg" alt="M142 HIMARS">
+                <img src="static/photos/mrap1.webp" alt="MRAP">
+                <img src="static/photos/bradley1.webp" alt="Bradley">
+                <img src="static/photos/ampv.jpg" alt="AMPV">
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 AEROSYSTEMS. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Услуги – AEROSYSTEMS</title>
+  <link rel="stylesheet" href="static/styles.css">
+  <style>
+    /* Additional styles for service card photo carousel */
+    .card-photos {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+      margin-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    .card-photos img {
+      height: 150px;
+      width: auto;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="static/photos/logo-transparent-png.png" alt="Логотип AEROSYSTEMS">
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="about.html">О компании</a></li>
+          <li><a href="services.html" class="active">Услуги</a></li>
+          <li><a href="contact.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="services-intro">
+      <h1>Наши услуги</h1>
+      <p>Мы предлагаем комплексные решения в области аэрокосмических технологий – от разработки и производства до
+        обслуживания и поддержки.</p>
+    </section>
+    <section class="services-list">
+      <div class="service-card">
+        <h2>Дизайн и разработка</h2>
+        <p>Инновационный подход к проектированию аэрокосмических систем с использованием передовых технологий.</p>
+        <div class="card-photos">
+          <img src="static/photos/blp_main.jpeg" alt="Дизайн и разработка 1">
+          <img src="static/photos/blp_1.jpg" alt="Дизайн и разработка 2">
+          <img src="static/photos/blp_2.jpg" alt="Дизайн и разработка 3">
+        </div>
+      </div>
+      <div class="service-card">
+        <h2>Производство</h2>
+        <p>Высокоточные технологии и строгий контроль качества на всех этапах производства.</p>
+        <div class="card-photos">
+          <img src="static/photos/fact_main.webp" alt="Производство 1">
+          <img src="static/photos/fact_1.jpg" alt="Производство 2">
+          <img src="static/photos/fact_2.jpg" alt="Производство 3">
+        </div>
+      </div>
+      <div class="service-card">
+        <h2>Обслуживание и поддержка</h2>
+        <p>Комплексное послепродажное обслуживание для обеспечения надежной работы вашей техники.</p>
+        <div class="card-photos">
+          <img src="static/photos/maint_1.png" alt="Обслуживание 1">
+          <img src="static/photos/maint_2.png" alt="Обслуживание 2">
+          <img src="static/photos/maint_3.jpeg" alt="Обслуживание 3">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 AEROSYSTEMS. Все права защищены.</p>
+    </div>
+  </footer>
+</body>
+
+</html>

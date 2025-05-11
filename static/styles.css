@@ -1,0 +1,343 @@
+/* CSS-переменные для единой цветовой схемы */
+:root {
+    --primary-color: #002b5c;
+    /* Темно-синий */
+    --secondary-color: #0066cc;
+    /* Ярко-синий */
+    --accent-color: #e6f2ff;
+    /* Светлый акцент */
+    --light-gray: #f7f7f7;
+    --text-color: #333;
+    --background-color: #fff;
+}
+
+/* Сброс и глобальные стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: var(--light-gray);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Контейнер */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Стили шапки */
+.site-header {
+    background-color: var(--background-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.site-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    max-width: 200px;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav li {
+    margin-left: 30px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 1rem;
+    padding: 8px 12px;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--secondary-color);
+}
+
+/* Герой-секция */
+.hero {
+    background: url('photos/hero-background.jpg') center center/cover no-repeat;
+    height: 500px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 43, 92, 0.6);
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.hero-content {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    z-index: 1;
+    animation: slideUp 1s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color);
+}
+
+/* Секция "Наши технологии" */
+.featured-products {
+    background-color: var(--background-color);
+    padding: 60px 20px;
+}
+
+.featured-products h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Карточки продуктов */
+.product-card {
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    margin: 20px;
+    color: var(--primary-color);
+}
+
+.product-card p {
+    margin: 0 20px 20px;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.btn-secondary {
+    display: inline-block;
+    margin: 0 20px 20px;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+}
+
+/* Футер */
+.site-footer {
+    background-color: var(--background-color);
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid #eaeaea;
+}
+
+.site-footer p {
+    color: var(--text-color);
+}
+
+/* Адаптивные настройки */
+@media (max-width: 768px) {
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-nav li {
+        margin: 10px 0;
+    }
+
+    .hero {
+        height: 300px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Стили для страницы "Услуги" */
+.services-intro {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: var(--background-color);
+}
+
+.services-intro h1 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.services-intro p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.service-card {
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-card h2 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    color: var(--text-color);
+}
+
+/* Стили для страницы "Услуги" */
+.services-intro {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: var(--background-color);
+}
+
+.services-intro h1 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.services-intro p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.service-card {
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-card h2 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    color: var(--text-color);
+}
