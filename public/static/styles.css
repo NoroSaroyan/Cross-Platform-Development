@@ -18,11 +18,23 @@
     box-sizing: border-box;
 }
 
+/* Ensure footer stays at the bottom of the page */
+html {
+    height: 100%;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background-color: var(--light-gray);
     color: var(--text-color);
     line-height: 1.6;
+}
+
+main {
+    flex: 1;
 }
 
 /* Контейнер */
@@ -50,6 +62,7 @@ body {
 
 .logo img {
     max-width: 200px;
+    
 }
 
 .main-nav ul {
@@ -218,8 +231,10 @@ body {
     background-color: var(--background-color);
     padding: 20px 0;
     text-align: center;
-    margin-top: 40px;
+    margin-top: auto;
     border-top: 1px solid #eaeaea;
+    color: var(--text-color);
+    font-size: 0.9rem;
 }
 
 .site-footer p {

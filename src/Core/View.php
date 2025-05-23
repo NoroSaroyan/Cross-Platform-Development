@@ -4,18 +4,22 @@ namespace App\Core;
 class View
 {
     /**
-     * @param string $template 'product/list' → src/View/product/list.php
-     * @param array  $data     Передаём в шаблон переменные
+     * Render a template within the layout
+     *
+     * @param string $template Example: 'static/contact' → src/View/static/contact.php
+     * @param array  $data     Variables available inside the view
      */
     public static function render(string $template, array $data = []): void
     {
         extract($data, EXTR_SKIP);
-        // Буферим контент страницы
+
+        // Start output buffering to capture view content
         ob_start();
-        require __DIR__ . "/../View/{$template}.php";
+        require __DIR__ . '/../View/' . ltrim($template, '/') . '.php';
         $content = ob_get_clean();
 
-        // Layout
+        // Now include the layout, which uses $content
         require __DIR__ . '/../View/layout.php';
     }
+
 }

@@ -50,7 +50,6 @@
     </style>
 </head>
 <body>
-<?php include 'header.php'; ?>
 <div class="container">
     <h1>Список продуктов</h1>
     <?php if (empty($products)): ?>

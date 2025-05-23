@@ -89,7 +89,7 @@
     </style>
 </head>
 <body>
-<?php include 'header.php'; ?>
+<?php // Removed redundant include for header.php ?>
 
 <div class="products-container">
     <h1>Продукция</h1>
@@ -107,6 +107,6 @@
 <?php endif; ?>
 </div>
 
-<?php include 'footer.php'; ?>
+<?php // Removed redundant include for footer.php ?>
 </body>
 </html>

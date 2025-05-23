@@ -51,7 +51,6 @@
     </style>
 </head>
 <body>
-    <?php include 'header.php'; ?>
     <div class="form-container">
         <h1>Добавить новый продукт</h1>
         <form action="save_product.php" method="post" enctype="multipart/form-data">
@@ -73,6 +72,5 @@
             <input type="submit" value="Добавить продукт">
         </form>
     </div>
-    <?php include 'footer.php'; ?>
 </body>
 </html>

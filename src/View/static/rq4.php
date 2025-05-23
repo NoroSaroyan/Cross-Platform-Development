@@ -1,10 +1,24 @@
+<?php
+    $product_title       = "RQ‑4 Global Hawk – Беспилотный летательный аппарат";
+    $product_description = "RQ‑4 Global Hawk – это высокотехнологичный беспилотный летательный аппарат, предназначенный для проведения разведывательных и наблюдательных миссий на больших дистанциях с высокой автономностью.";
+
+    $product_specs = [
+        "Размах крыла"   => "39 м",
+        "Длина"          => "15 м",
+        "Макс. скорость" => "830 км/ч",
+        "Экипаж"         => "0 (беспилотный)",
+    ];
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>M142 HIMARS – AEROSYSTEMS</title>
+    <title>
+        <?php echo $product_title; ?> – AEROSYSTEMS
+    </title>
     <link rel="stylesheet" href="static/styles.css">
     <style>
         .product-details {
@@ -73,18 +87,15 @@
 <body>
     <header class="site-header">
         <div class="container">
-            <a href="index.html" class="logo">
+            <a href="index.php" class="logo">
                 <img src="static/photos/logo-transparent-png.png" alt="Логотип AEROSYSTEMS">
             </a>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html" class="active">Главная</a></li>
-                    <li><a href="about.html">О компании</a></li>
-                    <li><a href="services.html">Услуги</a></li>
-                    <li><a href="products.php">Продукция</a></li>
-                    <li><a href="add_product.php">Добавить продукт</a></li>
-                    <li><a href="products_table.php">Добавить продукт</a></li>
-                    <li><a href="contact.html">Контакты</a></li>
+                    <li><a href="index.php">Главная</a></li>
+                    <li><a href="about.php">О компании</a></li>
+                    <li><a href="services.php">Услуги</a></li>
+                    <li><a href="contact.php">Контакты</a></li>
                 </ul>
             </nav>
         </div>
@@ -92,11 +103,11 @@
 
     <main class="main-content">
         <div class="product-details">
-            <h1>M142 HIMARS – Ракетная система</h1>
+            <h1>
+                <?php echo $product_title; ?>
+            </h1>
             <p class="product-info">
-                M142 HIMARS – это современная ракетная система, способная быстро развертываться и обеспечивать высокую
-                точность
-                при нанесении ударов по целям.
+                <?php echo $product_description; ?>
             </p>
             <!-- Product specifications table -->
             <table>
@@ -107,33 +118,23 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php foreach ($product_specs as $spec => $value): ?>
                     <tr>
-                        <td>Длина</td>
-                        <td>9 м</td>
+                        <td>
+                            <?php echo $spec; ?>
+                        </td>
+                        <td>
+                            <?php echo $value; ?>
+                        </td>
                     </tr>
-                    <tr>
-                        <td>Вес</td>
-                        <td>17 тонн</td>
-                    </tr>
-                    <tr>
-                        <td>Время развертывания</td>
-                        <td>&lt;5 минут</td>
-                    </tr>
-                    <tr>
-                        <td>Экипаж</td>
-                        <td>5</td>
-                    </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
             <button class="btn-download" onclick="generatePDF()">Скачать PDF‑брошюру</button>
         </div>
     </main>
 
-    <footer class="site-footer">
-        <div class="container">
-            <p>&copy; 2025 AEROSYSTEMS. Все права защищены.</p>
-        </div>
-    </footer>
+    <?php // Removed hardcoded footer to avoid duplication ?>
 
     <!-- jsPDF and autoTable plugin -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -144,22 +145,21 @@
             const doc = new jsPDF();
 
             doc.setFontSize(18);
-            doc.text("M142 HIMARS – Ракетная система", 20, 20);
+            doc.text("<?php echo $product_title; ?>", 20, 20);
             doc.setFontSize(12);
-            doc.text("Быстроразвертываемая ракетная система с высокой точностью поражения.", 20, 30);
+            doc.text("<?php echo $product_description; ?>", 20, 30);
 
             doc.autoTable({
                 head: [['Характеристика', 'Значение']],
                 body: [
-                    ['Длина', '9 м'],
-                    ['Вес', '17 тонн'],
-                    ['Время развертывания', '<5 минут'],
-                    ['Экипаж', '5']
+                    <?php foreach ($product_specs as $spec => $value): ?>
+                    ['<?php echo $spec; ?>', '<?php echo $value; ?>'],
+                    <?php endforeach; ?>
                 ],
                 startY: 40,
             });
 
-            doc.save('M142_HIMARS_Brochure.pdf');
+        doc.save('<?php echo str_replace(" ", "_", $product_title); ?>_Brochure.pdf');
         }
     </script>
 </body>

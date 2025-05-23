@@ -123,8 +123,6 @@
 </head>
 <body>
 
-<?php include 'header.php'; ?>
-
 <div class="container">
     <a href="products.php" class="back-button">← Назад к списку</a>
 
